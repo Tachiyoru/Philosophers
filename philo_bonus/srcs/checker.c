@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:19:52 by sleon             #+#    #+#             */
-/*   Updated: 2023/02/05 20:04:48 by sleon            ###   ########.fr       */
+/*   Updated: 2023/02/06 11:48:07 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	any_dead2(t_philos *philo1)
 			get_time_since_start(philo1->life->start), philo1->nbr);
 		return (1);
 	}
-	pthread_detach(philo1->checker);
 	sem_post(philo1->life->time);
 	usleep(20000);
 	return (0);

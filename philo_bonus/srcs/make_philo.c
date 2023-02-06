@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:44:33 by sleon             #+#    #+#             */
-/*   Updated: 2023/02/05 20:04:48 by sleon            ###   ########.fr       */
+/*   Updated: 2023/02/06 11:45:06 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	ft_waitpid_kill(t_data *data)
 
 	i = -1;
 	waitpid(-1, &status, 0);
-	printf("%d\n", WEXITSTATUS(status));
 	if (WEXITSTATUS(status) == 1)
 	{
 		while (++i < data->nbr_philo)

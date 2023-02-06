@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:40:23 by sleon             #+#    #+#             */
-/*   Updated: 2023/02/05 20:04:48 by sleon            ###   ########.fr       */
+/*   Updated: 2023/02/06 11:43:51 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	semaphore_init(t_data *data)
 	if (data->life.fork == SEM_FAILED)
 		return (msg("Error sem_open\n"), 0);
 	sem_unlink("eat");
-	data->life.eat = sem_open("eat", O_CREAT, 0644, data->nbr_philo);
+	data->life.eat = sem_open("eat", O_CREAT, 0644, 1);
 	if (data->life.eat == SEM_FAILED)
 		return (msg("Error sem_open\n"), 0);
 	sem_unlink("time");
