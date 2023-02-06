@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 18:19:52 by sleon             #+#    #+#             */
-/*   Updated: 2023/02/06 11:48:07 by sleon            ###   ########.fr       */
+/*   Updated: 2023/02/06 12:23:23 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	*check_dead(void *data)
 		if (any_dead2(philo))
 			return (pthread_detach(philo->checker), NULL);
 	}
-	pthread_detach(philo->checker);
 	return (NULL);
 }
 
@@ -50,10 +49,11 @@ int	any_dead2(t_philos *philo1)
 		sem_wait(philo1->life->write);
 		printf(BRED"%lld	%d is dead\n"NC,
 			get_time_since_start(philo1->life->start), philo1->nbr);
+		usleep(1000);
 		return (1);
 	}
 	sem_post(philo1->life->time);
-	usleep(20000);
+	usleep(1000);
 	return (0);
 }
 

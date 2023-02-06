@@ -6,7 +6,7 @@
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:54:43 by sleon             #+#    #+#             */
-/*   Updated: 2023/02/05 20:04:48 by sleon            ###   ########.fr       */
+/*   Updated: 2023/02/06 12:22:54 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	life(t_philos *philo1, t_data *data)
 		destroy_semaphore(data);
 		exit (1);
 	}
-	pthread_detach(philo1->checker);
+	usleep(1000);
 	destroy_semaphore(data);
 	exit (0);
 }
@@ -53,5 +53,7 @@ int	life_line(t_philos *philo1, t_data *data)
 		return (pthread_detach(philo1->checker), 5);
 	if (any_dead(philo1, data))
 		return (pthread_detach(philo1->checker), 2);
+	usleep(1000);
+	pthread_detach(philo1->checker);
 	return (0);
 }

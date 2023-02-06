@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ../include/philo.h                                            :+:      :+:    :+:   */
+/*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sleon <sleon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 17:33:37 by sleon             #+#    #+#             */
-/*   Updated: 2023/02/05 18:33:07 by sleon            ###   ########.fr       */
+/*   Updated: 2023/02/06 12:08:46 by sleon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ int			main(int argc, char **argv);
 void		solitary(char **argv);
 
 ///Parsing
-int		check_args(int argc, char **argv);
-int		only_numbers(char **argv, int argc);
+int			check_args(int argc, char **argv);
+int			only_numbers(char **argv, int argc);
 
 ///Init
 int			init(t_data *data, char **argv);
@@ -105,16 +105,17 @@ int			has_eaten(t_philos *philo);
 int			any_dead2(t_philos *philo1);
 
 ///Time
-void		ft_sleep_lifeline(t_philos *philo, t_data *data, long int time_in_ms);
+void		ft_sleep_lifeline(t_philos *philo, t_data *data,
+				long int time_in_ms);
 void		ft_usleep(t_data *data, long int time_in_ms);
 long long	get_time_since_start(long long time_to_wait);
 long long	get_time(void);
 
 ///Utils
-int			ft_write_status(t_philos *philo1, t_data *data, char *action, char *color);
+int			ft_write_status(t_philos *philo1, t_data *data,
+				char *action, char *color);
 void		destroy_semaphore(t_data *data);
 void		msg(char *str);
 int			ft_atoi(char *str);
-
 
 #endif
